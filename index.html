@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Pseudo-classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }   
+
+        button:hover {
+            background-color: #1d6fa5;
+        }
+
+        input {
+            padding: 8px;
+            margin-right: 10px;
+            border: 2px solid #999;
+        }
+
+        input:focus {
+            border-color: #e74c3c;
+            outline: none;
+        }   
+
+        ul {
+            width: 100px;
+        }
+
+        li:first-child {
+            color: green;
+            font-weight: bold;
+        }
+
+        li:last-child {
+            color: red;
+            font-style: italic;
+        }
+
+        .content-block {
+            padding: 15px;
+            border: 2px solid #b77f7f;
+        }
+
+        .content-block a {
+            color: blue;
+        }
+
+        .content-block a:hover {
+            color: orange;
+        }
+
+        .content-block p:nth-of-type(odd){
+            background-color: #f0f0f0;
+        }
+
+        .combo p:first-child:hover {
+            background-color: lightgreen;
+        }
+
+        .combo input:last-child:focus {
+            background-color: #ffeaa7;
+            border-color: #d35400;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Pseudo-classes: hover & focus</h1>
+
+    <form>
+        <input type="text" placeholder="Enter your name">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+    <h2>first-child & last-child</h2>
+
+    <ul>
+        <li>First item</li>
+        <li>Middle item</li>
+        <li>Last item</li>
+    </ul>
+
+    <hr>
+
+    <h2>Pseudo-classes on different elements</h2>
+
+    <div class="content-block">
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+
+        <a href="#">Sample link</a>
+    </div>
+
+    <hr>
+
+    <h2>Combination of pseudo-classes</h2>
+
+    <div class="combo">
+        <p>First paragraph</p>
+        <p>Middle paragraph</p>
+        <p>Last paragraph</p>
+        <input type="text" placeholder="Focus me (last child)">
+    </div>
+
+</body>
+</html>
