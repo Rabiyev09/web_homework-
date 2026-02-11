@@ -1,121 +1,87 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CSS Pseudo-classes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Example</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-
-        button {
-            padding: 10px 15px;
-            border: none;
-            background-color: #3498db;
-            color: white;
-            cursor: pointer;
-        }   
-
-        button:hover {
-            background-color: #1d6fa5;
-        }
-
-        input {
-            padding: 8px;
-            margin-right: 10px;
-            border: 2px solid #999;
-        }
-
-        input:focus {
-            border-color: #e74c3c;
-            outline: none;
-        }   
-
-        ul {
-            width: 100px;
-        }
-
-        li:first-child {
-            color: green;
-            font-weight: bold;
-        }
-
-        li:last-child {
-            color: red;
-            font-style: italic;
-        }
-
-        .content-block {
-            padding: 15px;
-            border: 2px solid #b77f7f;
-        }
-
-        .content-block a {
-            color: blue;
-        }
-
-        .content-block a:hover {
-            color: orange;
-        }
-
-        .content-block p:nth-of-type(odd){
-            background-color: #f0f0f0;
-        }
-
-        .combo p:first-child:hover {
-            background-color: lightgreen;
-        }
-
-        .combo input:last-child:focus {
-            background-color: #ffeaa7;
-            border-color: #d35400;
-        }
-
+    .container {
+            height: 4000px;
+    }
+    .sticky-element {
+        position: sticky;
+        top: 10px;
+        background-color: rgb(21, 68, 84);
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    .red {
+        margin-top: 20px;
+        color: red;
+    }
+    h1 {
+        margin-top: 20px;
+        color: blue;
+    }
+    .sticky-absolute {
+        position: absolute;
+        top: 10px;
+        background-color: rgb(21, 68, 84);
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    .green {
+        margin-top: 20px;
+        color: green;
+    }
+    .static-box {
+        position: static; 
+        background-color: lightgray;
+        padding: 20px;
+        border: 2px solid #999;
+        margin-bottom: 20px;
+    }
+    .relative-box {
+        position: relative;
+        top: 30px;   
+        left: 50px;  
+        background-color: lightblue;
+        padding: 20px;
+        border: 2px solid #3498db;
+        margin-bottom: 20px;
+    }
+    .fixed-box {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: orange;
+        padding: 20px;
+        border: 2px solid #e67e22;
+        color: white;
+    }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="sticky-element">I will stick to the top when you scroll down!</div>
+        <p class="red">Первый абзац красный</p>
+        <h1>Heading 1</h1>
+        <div class="sticky-absolute">I will also stick to the top when you scroll down!</div>
+        <p class="green">Второй абзац зелёный<br> second</p>
+        <div style="position: relative; top: 20px; left: 30px; background-color: lightblue; padding: 10px;">
+            Я сдвинут на 20px вниз и 30px вправо
+        </div>
+        <p>Я остаюсь на своем месте</p>
+        <div style="position: static; background-color: lightgray; padding: 10px;">
+            Я статический блок
+        </div>
+        <p>Я обычный абзац</p>
+        <div style="position: fixed; top: 10px; right: 10px; background-color: orange; padding: 10px;">
+            Я фиксированный блок
+        </div>
+        <p>Прокрути страницу вниз, чтобы увидеть, что я остаюсь на месте</p>
+        <div style="height: 1000px;"></div>
 
-    <h1>Pseudo-classes: hover & focus</h1>
-
-    <form>
-        <input type="text" placeholder="Enter your name">
-
-        <button type="submit">Submit</button>
-    </form>
-
-    <hr>
-
-    <h2>first-child & last-child</h2>
-
-    <ul>
-        <li>First item</li>
-        <li>Middle item</li>
-        <li>Last item</li>
-    </ul>
-
-    <hr>
-
-    <h2>Pseudo-classes on different elements</h2>
-
-    <div class="content-block">
-        <p>Paragraph 1</p>
-        <p>Paragraph 2</p>
-        <p>Paragraph 3</p>
-
-        <a href="#">Sample link</a>
     </div>
-
-    <hr>
-
-    <h2>Combination of pseudo-classes</h2>
-
-    <div class="combo">
-        <p>First paragraph</p>
-        <p>Middle paragraph</p>
-        <p>Last paragraph</p>
-        <input type="text" placeholder="Focus me (last child)">
-    </div>
-
 </body>
 </html>
