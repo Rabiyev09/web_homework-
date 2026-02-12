@@ -3,85 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticky Example</title>
+    <title>FLEXBOX</title>
     <style>
-    .container {
-            height: 4000px;
-    }
-    .sticky-element {
-        position: sticky;
-        top: 10px;
-        background-color: rgb(21, 68, 84);
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
-    .red {
-        margin-top: 20px;
-        color: red;
-    }
-    h1 {
-        margin-top: 20px;
-        color: blue;
-    }
-    .sticky-absolute {
-        position: absolute;
-        top: 10px;
-        background-color: rgb(21, 68, 84);
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
-    .green {
-        margin-top: 20px;
-        color: green;
-    }
-    .static-box {
-        position: static; 
-        background-color: lightgray;
-        padding: 20px;
-        border: 2px solid #999;
-        margin-bottom: 20px;
-    }
-    .relative-box {
-        position: relative;
-        top: 30px;   
-        left: 50px;  
-        background-color: lightblue;
-        padding: 20px;
-        border: 2px solid #3498db;
-        margin-bottom: 20px;
-    }
-    .fixed-box {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        background-color: orange;
-        padding: 20px;
-        border: 2px solid #e67e22;
-        color: white;
-    }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            height: 300px;
+            align-content: space-around;
+            border: 2px solid black;
+        }
+        .item {
+            flex: 1 1 200px;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: lightblue;
+            text-align: center;
+        }
+        .block-box { 
+            display: block; 
+            margin-top: 20px;
+            padding: 10px;  
+            background: lightgreen;
+            border: 1px solid black;
+        }
+        .inline-box {
+            display: inline; 
+            margin-top: 20px;
+            padding: 10px;
+            background: lightcoral;
+            border: 1px solid black;
+        }
+        .flex-box { 
+            display: flex; 
+            flex-wrap: wrap;
+            margin-top: 20px;
+            padding: 10px;
+            background: lightblue;
+            border: 1px solid black;
+        }
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            height: 200px;  
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        .flex-direction.flex-flow{
+            flex-direction: column;
+            flex-flow: row wrap;
+        }
+        .flex-container.practical {
+            display: flex;
+            margin-top: 20px;
+            height: 100px;
+            border: 2px solid black;
+        }
+
+        .grow {
+            flex: 1 1 40%; /* растёт, базовая ширина 40% */
+            background: lightcoral;
+            text-align: center;
+        }
+
+        .auto {
+            flex: 2 1 auto; 
+            background: lightgreen;
+            text-align: center;
+        }
+
+        .fixed {
+            flex: 0 0 100px; 
+            background: lightblue;
+            text-align: center;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;  
+            align-items: center;      
+            background: #333;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .menu a:hover {
+            background: #555;
+        }   
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="sticky-element">I will stick to the top when you scroll down!</div>
-        <p class="red">Первый абзац красный</p>
-        <h1>Heading 1</h1>
-        <div class="sticky-absolute">I will also stick to the top when you scroll down!</div>
-        <p class="green">Второй абзац зелёный<br> second</p>
-        <div style="position: relative; top: 20px; left: 30px; background-color: lightblue; padding: 10px;">
-            Я сдвинут на 20px вниз и 30px вправо
-        </div>
-        <p>Я остаюсь на своем месте</p>
-        <div style="position: static; background-color: lightgray; padding: 10px;">
-            Я статический блок
-        </div>
-        <p>Я обычный абзац</p>
-        <div style="position: fixed; top: 10px; right: 10px; background-color: orange; padding: 10px;">
-            Я фиксированный блок
-        </div>
-        <p>Прокрути страницу вниз, чтобы увидеть, что я остаюсь на месте</p>
-        <div style="height: 1000px;"></div>
-
+        <div class="item item1">Item 1</div>
+        <div class="item item2">Item 2</div>
+        <div class="item item3">Item 3</div>
+        <div class="item item4">Item 4</div>
+        <div class="item item5">Item 5</div>
+        <div class="item item6">Item 6</div>
     </div>
+    <div>
+        <div class="block-box">Block</div>
+        <div class="inline-box">Inline</div>
+        <div class="flex-box">Flex</div>
+    </div>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="flex-container flex-direction">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="flex-container flex-flow">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="flex-container practical">
+        <div class="grow">50%</div>
+        <div class="auto">расширяется</div>
+        <div class="fixed">100px</div>
+    </div>
+    <nav class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
 </body>
 </html>
