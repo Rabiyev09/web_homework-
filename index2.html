@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Pseudo-classes</title>
+    <style>
+        /*====hr====*/
+        .first {
+            border: 2px solid black;
+        }
+
+        .second {
+            border: 2px solid black;
+        }
+
+        .third {
+            border: 2px solid black;
+        }
+
+          body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        /* ===== button ===== */
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d6fa5;
+        }
+
+        /* ===== input ===== */
+
+        input {
+            padding: 8px;
+            margin-right: 10px;
+            border: 2px solid #999;
+        }
+
+        input:focus {
+            border-color: #e74c3c;
+            outline: none;
+        }
+
+        /* ===== LIST ===== */
+
+        ol {
+            width: 150px;
+        }
+
+        li:first-child {
+            color: green;
+            font-weight: bold;
+        }
+
+        li:last-child {
+            color: red;
+            font-style: italic;
+        }
+
+        /* ===== Content block ===== */
+
+        .content-block {
+            padding: 15px;
+            border: 2px solid #bdc3c7;
+        }
+
+        .content-block a {
+            color: blue;
+        }
+
+        .content-block a:hover {
+            color: red;
+        }
+
+        .content-block p:nth-of-type(odd) {
+            background-color: gray;
+        }
+
+        /* ===== combo ===== */
+
+        .combo input:last-child:focus {
+            background-color: #ffeaa7;
+            border-color: #d35400;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <h1>Pseudo-classes: hover and focus</h1>
+
+    <form>
+        <input type="text" placeholder="Enter your Fullname">
+
+        <button type="submit">Send</button>
+    </form>
+    <hr class="first">
+
+    <h2>first-child and last-child</h2>
+
+    <ol>
+        <li>First item</li>
+        <li>Middle item</li>
+        <li>Last item</li>
+    </ol>
+
+    <hr class="second">
+
+    <h2>Pseudo-classes on different elements</h2>
+
+    <div class="content-block">
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+
+        <a href="#">Connect link</a>
+    </div>
+
+    <hr class="third">
+
+    <h2>Combination of pseudo-classes</h2>
+
+    <div class="combo">
+        <p>First paragraph</p>
+        <p>Middle paragraph</p>
+        <p>Last paragraph</p>
+        <input type="text" placeholder="Focus me">
+        <button type="submit">Send</button>
+    </div>
+
+</body>
+</html>
